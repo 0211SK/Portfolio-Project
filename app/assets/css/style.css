@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* メインエリア */
+.site-main {
+    flex: 1;
+    padding: 24px;
+    /* ヘッダーの高さ分だけ余白を追加 */
+    padding-top: 84px;
+}
+
+/* レイアウト */
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* フッター */
+.site-footer {
+    padding: 16px 24px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    font-size: 12px;
+}
+
+/* ヘッダー */
+.header {
+    /* 固定 */
+    position: fixed;
+    /* 上に貼り付け */
+    top: 0;
+    left: 0;
+    right: 0;
+    /* 高さを固定（必要に応じて調整） */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    /* 前面に出す */
+    z-index: 1000;
+    background-color: rgb(197, 255, 243);
+}
+
+.header-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+}
+
+/* ロゴ */
+.logo {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #555;
+}
+
+.nav-item.router-link-active {
+    font-weight: bold;
+}
+
+/* ページ共通 */
+.page h1 {
+    margin-bottom: 16px;
+}
+
+.page p {
+    line-height: 1.7;
+}
+
+/* ボタン */
+.btn {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    text-decoration: none;
+    color: #333;
+}
+
+/* 固定ナビ／次ページボタン */
+.next-page-button {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.next-page-button:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* 画像 */
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ローディング */
+.loading-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading-box {
+    padding: 24px 32px;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    border-top-color: #333;
+    margin: 0 auto 12px;
+    animation: loading-spin 0.8s linear infinite;
+}
+
+@keyframes loading-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
