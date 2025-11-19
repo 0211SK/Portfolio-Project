@@ -1,12 +1,40 @@
 <template>
   <section class="page">
-    <h1>Experience</h1>
-    <p>これまでの職務・制作経験をここに書きます。</p>
+
+    <h1>実績</h1>
+
+    <div class="exp-grid">
+      <ExperienceCard v-for="item in experiences" :key="item.id" :title="item.title" :summary="item.summary"
+        @open="openModal(item)" />
+    </div>
+
+    <ExperienceModal v-if="selected" :title="selected.title" :detail="selected.detail" :timeline="selected.timeline"
+      @close="selected = null" />
+
+    <!-- 次ページボタン -->
+    <NextPageButton to="/portfolio/skill" />
   </section>
-  <!-- 次ページボタン -->
-  <NextPageButton to="/portfolio/skill" />
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import NextPageButton from '~/components/common/NextPageButton.vue'
+import ExperienceCard from '~/components/experience/ExperienceCard.vue'
+import ExperienceModal from '~/components/experience/ExperienceModal.vue'
+import { experiences, type Experience } from '~/data/experiences'
+
+const selected = ref<Experience | null>(null)
+
+const openModal = (item: Experience) => {
+  selected.value = item
+}
 </script>
+
+<style scoped>
+.exp-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+</style>
