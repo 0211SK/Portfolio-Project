@@ -46,7 +46,7 @@ export const experiences: Experience[] = [
         title: '工業系の業務ツールの改修及びテスト',
         summary: '【使用言語】\nCOBOL\n【期間】\n2024/11～2025/3',
         detail: `社員番号の桁数を4から6桁に変更する修正をし、それが他の機能に影響を与えていないか画面ごとに単体テストする案件。\n主な担当は修正と単体テストで、影響範囲の調査・結合テスト・簡単なロジックの開発も一部担当。
-    \n【使用ツール】\n作業管理：Excel\nソース管理：Excel、エクスプローラー\nコミュニケーション：teams`,
+    \n【使用ツール】\n作業管理：Excel\nソース管理：Excel、エクスプローラー、サクラエディタ\nコミュニケーション：teams\nDB：SQLServerManagementStudio`,
         timeline: [
             {
                 period: '11月',
@@ -89,8 +89,8 @@ export const experiences: Experience[] = [
         id: 3,
         title: 'Webシステムのリライト案件',
         summary: '【使用言語】\nフロント：HTML、CSS、Javascript\nバックエンド：Kotlin\n【期間】\n2025/4～2025/10',
-        detail: `データ移行に伴い、Javaで作成されているWebシステムをKotlinで再作成するリライト案件。\nフロント〜バックエンドまで一貫して開発し、設計書の作成～結合テストまでを担当。
-    \n【使用ツール】\n作業管理：Redmine\nソース管理：Git、GitHub、VisualStudioCode\nコミュニケーション：Slack`,
+        detail: `データ移行に伴い、Javaで作成されているWebシステムをKotlinで再作成するリライト案件。\nフロント〜バックエンドまで一貫して開発し、既存のソースを読んでの画面定義書の作成～結合テストまでを担当。
+    \n【使用ツール】\n作業管理：Redmine\nソース管理：Git、GitHub、VisualStudioCode\nコミュニケーション：Slack\nDB：EC2上のMySQL`,
         timeline: [
             {
                 period: '4月',
