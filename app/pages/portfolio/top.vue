@@ -1,14 +1,21 @@
 <template>
-    <section class="page">
-        <h1>Portfolio Top</h1>
-        <p>ここに自己紹介やメインビジュアルなどを配置します。</p>
+    <section class="page top-page">
 
-        <figure class="hero-image">
-            <img src="/images/DSC01792.jpg" alt="メイン画像" />
-            <figcaption>メインビジュアルのキャプション</figcaption>
-        </figure>
+        <div class="hero-container">
+            <img src="/images/DSC01792.jpg" class="hero-bg" alt="メイン画像" />
+
+            <div class="hero-text">
+                <p>
+                    初めまして。<br>
+                    このサイトでは、私が現在までにエンジニアとして経験したことや制作した作品を紹介しています。<br>
+                    私について少しでも知っていただけると嬉しいです。
+                </p>
+            </div>
+        </div>
+
         <!-- 次ページボタン -->
         <NextPageButton to="/portfolio/profile" />
+
     </section>
 </template>
 
