@@ -234,3 +234,82 @@ body {
     font-size: 18px;
     line-height: 1.8;
 }
+
+/* フォームスタイル */
+.contact-form {
+    max-width: 640px;
+    margin-top: 24px;
+    padding: 24px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.required {
+    color: #e53935;
+    margin-left: 4px;
+    font-size: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #1e88e5;
+    box-shadow: 0 0 0 1px rgba(30, 136, 229, 0.2);
+}
+
+.form-submit-button {
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #333;
+    color: #fff;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.form-submit-button:disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+
+.form-submit-button:not(:disabled):hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.form-message {
+    margin: 0 0 12px;
+    font-size: 13px;
+}
+
+.form-message-error {
+    color: #e53935;
+}
+
+.form-message-success {
+    color: #1e88e5;
+}
