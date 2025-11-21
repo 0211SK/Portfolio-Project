@@ -1,3 +1,4 @@
+// 経験した案件のデータ
 export type TimelineBlock = {
     period: string
     items: string[]
@@ -11,8 +12,7 @@ export type Experience = {
     timeline?: TimelineBlock[]
 }
 
-// 実データ
-export const experiences: Experience[] = [
+export const experiencesData: Experience[] = [
     {
         id: 1,
         title: 'リストデータの移行ツール作成',

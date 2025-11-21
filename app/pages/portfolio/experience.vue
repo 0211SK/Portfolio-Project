@@ -4,7 +4,7 @@
     <h1>実績</h1>
 
     <div class="exp-grid">
-      <ExperienceCard v-for="item in experiences" :key="item.id" :title="item.title" :summary="item.summary"
+      <ExperienceCard v-for="item in experiencesData" :key="item.id" :title="item.title" :summary="item.summary"
         @open="openModal(item)" />
     </div>
 
@@ -21,7 +21,7 @@ import { ref } from 'vue'
 import NextPageButton from '~/components/common/NextPageButton.vue'
 import ExperienceCard from '~/components/experience/ExperienceCard.vue'
 import ExperienceModal from '~/components/experience/ExperienceModal.vue'
-import { experiences, type Experience } from '~/data/experiences'
+import { experiencesData, type Experience } from '~/data/experience/experiencesData'
 
 const selected = ref<Experience | null>(null)
 
