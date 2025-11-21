@@ -16,10 +16,13 @@ defineEmits(['open'])
 
 <style scoped>
 .exp-card {
-    background: #ecfee6;
+    background: #fffaf0;
+    border: 3px;
+    border-color: #f5a623;
+    border-style: dotted;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(3, 255, 3, 0.08);
     cursor: pointer;
     transition: transform .2s ease, box-shadow .2s ease;
 }
