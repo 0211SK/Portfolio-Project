@@ -13,12 +13,11 @@
             </div>
         </div>
 
-        <!-- 次ページボタン -->
-        <NextPageButton to="/portfolio/profile" />
-
+        <!-- ナビゲーションボタン -->
+        <PageNavButtons next-to="/portfolio/profile" />
     </section>
 </template>
 
 <script setup lang="ts">
-import NextPageButton from '~/components/common/NextPageButton.vue'
+import PageNavButtons from '~/components/common/PageNavButtons.vue'
 </script>

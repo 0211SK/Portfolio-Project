@@ -96,9 +96,6 @@ body {
 
 /* 固定ナビ／次ページボタン */
 .next-page-button {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
     z-index: 999;
     padding: 12px 20px;
     font-size: 16px;
@@ -114,6 +111,53 @@ body {
 .next-page-button:hover {
     opacity: 1;
     transform: translateY(-2px);
+}
+
+/* 固定ナビ／バックボタン */
+.back-page-button {
+    z-index: 999;
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.back-page-button:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* ボタン位置 */
+/* ボタン全体をまとめるコンテナ */
+.button-position {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    display: flex;
+    gap: 16px;
+    /* ボタン間の余白 */
+}
+
+/* 1つだけなら右下にぴったり寄せる */
+.button-position:only-child,
+.button-position>*:only-child {
+    margin-left: auto;
+}
+
+/* ボタン（既存の next/back はそのまま使える） */
+.button-position button,
+.button-position a {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    opacity: 0.9;
+    transition: opacity .2s ease, transform .2s ease;
 }
 
 /* 画像 */

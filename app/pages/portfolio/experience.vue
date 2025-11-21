@@ -11,14 +11,15 @@
     <ExperienceModal v-if="selected" :title="selected.title" :detail="selected.detail" :timeline="selected.timeline"
       @close="selected = null" />
 
-    <!-- 次ページボタン -->
-    <NextPageButton to="/portfolio/skill" />
+    <!-- ナビゲーションボタン -->
+    <PageNavButtons back-to="/portfolio/profile" next-to="/portfolio/works" />
+
   </section>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import NextPageButton from '~/components/common/NextPageButton.vue'
+import PageNavButtons from '~/components/common/PageNavButtons.vue'
 import ExperienceCard from '~/components/experience/ExperienceCard.vue'
 import ExperienceModal from '~/components/experience/ExperienceModal.vue'
 import { experiencesData, type Experience } from '~/data/experience/experiencesData'

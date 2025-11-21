@@ -6,11 +6,12 @@
       <li>JavaScript / TypeScript</li>
       <li>Vue.js / Nuxt</li>
     </ul>
-    <!-- 次ページボタン -->
-    <NextPageButton to="/portfolio/fin" />
+
+    <!-- ナビゲーションボタン -->
+    <PageNavButtons back-to="/portfolio/works" />
   </section>
 </template>
 
 <script setup lang="ts">
-import NextPageButton from '~/components/common/NextPageButton.vue'
+import PageNavButtons from '~/components/common/PageNavButtons.vue';
 </script>
