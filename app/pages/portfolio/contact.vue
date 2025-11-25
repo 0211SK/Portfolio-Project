@@ -4,7 +4,8 @@
     <p class="page-description">
       お仕事のご相談やご質問などがありましたら、こちらのフォームからお気軽にご連絡ください。
     </p>
-    <p>※現在フォーム送信は実装していないため、何かありましたら「sugawarakotono0211@gmail.com」までお願いします。</p>
+    <p>※フォーム送信がうまくいかない場合は、
+      「sugawarakotono0211@gmail.com」まで直接ご連絡ください。</p>
 
     <form class="contact-form" @submit.prevent="handleSubmit">
       <div class="form-group">
@@ -19,7 +20,7 @@
 
       <div class="form-group">
         <label for="message">お問い合わせ内容<span class="required">*</span></label>
-        <textarea id="message" v-model="form.message" rows="6" required />
+        <textarea id="message" v-model="form.message" rows="6" required></textarea>
       </div>
 
       <!-- エラー/成功メッセージ -->
@@ -44,6 +45,11 @@
 import { reactive, ref } from 'vue'
 import PageNavButtons from '~/components/common/PageNavButtons.vue'
 
+type ContactResponse = {
+  success: boolean
+  error?: string
+}
+
 const form = reactive({
   name: '',
   email: '',
@@ -58,31 +64,30 @@ const handleSubmit = async () => {
   error.value = ''
   submitted.value = false
 
-  // 簡易バリデーション
   if (!form.name || !form.email || !form.message) {
-    error.value = 'すべての必須項目を入力してください。'
+    error.value = 'すべての必須項目が入力されていません。'
     return
   }
 
   try {
     submitting.value = true
 
-    // ▼ 実際の送信処理はここに実装（例：/api/contact へ POST）
-    // const res = await $fetch('/api/contact', {
-    //   method: 'POST',
-    //   body: { ...form },
-    // })
+    // メール受信API呼び出し
+    const res = await $fetch<ContactResponse>('/api/contact', {
+      method: 'POST',
+      body: { ...form },
+    })
 
-    // デモ用：0.5秒待って成功とみなす
-    await new Promise((resolve) => setTimeout(resolve, 500))
-
-    submitted.value = true
-    // フォームリセット
-    form.name = ''
-    form.email = ''
-    form.message = ''
-  } catch (e) {
-    error.value = '送信に失敗しました。時間をおいて再度お試しください。'
+    if (res.success) {
+      submitted.value = true
+      form.name = ''
+      form.email = ''
+      form.message = ''
+    } else {
+      error.value = res.error || '送信に失敗しました。'
+    }
+  } catch (err) {
+    error.value = '通信エラーが発生しました。'
   } finally {
     submitting.value = false
   }
