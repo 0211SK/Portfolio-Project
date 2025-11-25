@@ -2,7 +2,7 @@
     <section class="page top-page">
 
         <div class="hero-container">
-            <img src="/images/DSC01792.jpg" class="hero-bg" alt="メイン画像" />
+            <img src="/images/IMG_0545.jpeg" class="hero-bg" alt="メイン画像" />
 
             <div class="hero-text">
                 <p>

@@ -8,7 +8,7 @@
         <div class="profile-left">
           <figure class="profile-photo">
             <!-- プロフィール画像 -->
-            <img src="/images/DSC04152.JPG" alt="プロフィール写真" />
+            <img src="/images/IMG_0556.jpeg" alt="プロフィール写真" />
           </figure>
 
           <div class="profile-name-block">

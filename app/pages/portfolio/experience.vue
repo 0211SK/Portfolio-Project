@@ -1,7 +1,7 @@
 <template>
   <section class="page">
 
-    <h1>実績</h1>
+    <h1>Experience</h1>
 
     <div class="exp-grid">
       <ExperienceCard v-for="item in experiencesData" :key="item.id" :title="item.title" :summary="item.summary"
