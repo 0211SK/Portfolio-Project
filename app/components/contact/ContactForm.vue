@@ -1,5 +1,5 @@
 <template>
-    <form class="contact-form" @submit.prevent="handleSubmit">
+    <form class="contact-form" novalidate @submit.prevent="handleSubmit">
         <div class="form-group">
             <label for="name">お名前<span class="required">*</span></label>
             <input id="name" type="text" v-model="form.name" required />
