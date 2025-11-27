@@ -31,15 +31,16 @@ jobs:
       - name: Run unit & server tests (Vitest)
         run: npm run test
 
-      # Cypress で E2E テスト
+      # ここで本番ビルドを作成
+      - name: Build Nuxt app
+        run: npm run build
+
+      # Cypress で E2E テスト（本番ビルドの preview を起動）
       - name: Run E2E tests (Cypress)
         uses: cypress-io/github-action@v6
         with:
-          # すでに上で npm ci 済みなので再インストールしない
           install: false
-          start: npm run dev
+          start: npm run preview
           wait-on: 'http://localhost:3000'
+          wait-on-timeout: 120000
           browser: electron
-
-      - name: Build Nuxt App
-        run: npm run build
