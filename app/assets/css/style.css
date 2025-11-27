@@ -1,0 +1,315 @@
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* メインエリア */
+.site-main {
+    flex: 1;
+    padding: 24px;
+    /* ヘッダーの高さ分だけ余白を追加 */
+    padding-top: 84px;
+}
+
+/* レイアウト */
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* フッター */
+.site-footer {
+    padding: 16px 24px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    font-size: 12px;
+}
+
+/* ヘッダー */
+.header {
+    /* 固定 */
+    position: fixed;
+    /* 上に貼り付け */
+    top: 0;
+    left: 0;
+    right: 0;
+    /* 高さを固定（必要に応じて調整） */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    /* 前面に出す */
+    z-index: 1000;
+    background-color: rgb(197, 255, 243);
+}
+
+.header-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+}
+
+/* ロゴ */
+.logo {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #555;
+}
+
+.nav-item.router-link-active {
+    font-weight: bold;
+}
+
+/* ページ共通 */
+.page h1 {
+    margin-bottom: 16px;
+}
+
+.page p {
+    line-height: 1.7;
+}
+
+/* ボタン */
+.btn {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    text-decoration: none;
+    color: #333;
+}
+
+/* 固定ナビ／次ページボタン */
+.next-page-button {
+    z-index: 999;
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.next-page-button:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* 固定ナビ／バックボタン */
+.back-page-button {
+    z-index: 999;
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.back-page-button:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* ボタン位置 */
+/* ボタン全体をまとめるコンテナ */
+.button-position {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    display: flex;
+    gap: 16px;
+    /* ボタン間の余白 */
+}
+
+/* 1つだけなら右下にぴったり寄せる */
+.button-position:only-child,
+.button-position>*:only-child {
+    margin-left: auto;
+}
+
+/* ボタン（既存の next/back はそのまま使える） */
+.button-position button,
+.button-position a {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    opacity: 0.9;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+/* 画像 */
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ローディング */
+.loading-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading-box {
+    padding: 24px 32px;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    border-top-color: #333;
+    margin: 0 auto 12px;
+    animation: loading-spin 0.8s linear infinite;
+}
+
+@keyframes loading-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 画像にテキストを重ねるヒーローエリア */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 750px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.hero-bg {
+    width: 100%;
+    height: 100%;
+    /* 画面いっぱいに広がる */
+    object-fit: cover;
+    /* 背景を少し暗くして文字を見やすく */
+    filter: brightness(70%);
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 80%;
+    max-width: 780px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* フォームスタイル */
+.contact-form {
+    max-width: 640px;
+    margin-top: 24px;
+    padding: 24px;
+    border-radius: 12px;
+    background: #e1f9dc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.required {
+    color: #e53935;
+    margin-left: 4px;
+    font-size: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #1e88e5;
+    box-shadow: 0 0 0 1px rgba(30, 136, 229, 0.2);
+}
+
+.form-submit-button {
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #333;
+    color: #fff;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.form-submit-button:disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+
+.form-submit-button:not(:disabled):hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.form-message {
+    margin: 0 0 12px;
+    font-size: 13px;
+}
+
+.form-message-error {
+    color: #e53935;
+}
+
+.form-message-success {
+    color: #1e88e5;
+}
