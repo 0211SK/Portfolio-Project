@@ -26,13 +26,14 @@ describe('Contact page', () => {
     })
 
     it('正しく入力すると、API 成功レスポンスに応じて完了メッセージが表示され、フォームがリセットされる', () => {
-        cy.visit('/portfolio/contact')
-
-        // /api/contactをモック（成功パターン）
-        cy.intercept('POST', '/api/contact', {
+        // 先にinterceptを張る（絶対URL / クエリ付きも拾えるようにする）
+        cy.intercept('POST', '**/api/contact*', {
             statusCode: 200,
             body: { success: true },
         }).as('contactPost')
+
+        // そのあとでページを開く
+        cy.visit('/portfolio/contact')
 
         // フォーム入力
         cy.get('#name').type('テストユーザー')
@@ -42,12 +43,14 @@ describe('Contact page', () => {
         // 送信
         cy.get('button.form-submit-button').click()
 
-        // APIが叩かれていること
-        cy.wait('@contactPost').its('request.body').should((body) => {
-            expect(body).to.have.property('name', 'テストユーザー')
-            expect(body).to.have.property('email', 'test@example.com')
-            expect(body).to.have.property('message', 'お問い合わせメッセージです。')
-        })
+        // リクエスト内容の確認
+        cy.wait('@contactPost')
+            .its('request.body')
+            .should((body) => {
+                expect(body).to.have.property('name', 'テストユーザー')
+                expect(body).to.have.property('email', 'test@example.com')
+                expect(body).to.have.property('message', 'お問い合わせメッセージです。')
+            })
 
         // 成功メッセージ
         cy.contains('送信が完了しました。ありがとうございます。').should('be.visible')
