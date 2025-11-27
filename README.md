@@ -99,12 +99,13 @@ cypress/
 ---
 
 ## ⚙ Setup（セットアップ）
-1. Install dependencies（依存関係のインストール）
+```bash
+# 依存関係のインストール
 npm install
 
-2. Development server（開発サーバーの起動）
+# 開発サーバー起動
 npm run dev
-
+```
 
 http://localhost:3000 が開発環境になります。
 
@@ -155,10 +156,11 @@ PageNavButtons（戻る / 次へ 導線テスト）
 
 プロジェクトルートに .env を作成：
 
+```env
 GMAIL_USER=your@gmail.com
 GMAIL_PASS=your_app_password
 MAIL_TO=destination@gmail.com
-
+```
 
 ※ Gmail の「アプリパスワード」が必要です。
 通常のログインパスワードでは動作しません。
@@ -205,21 +207,9 @@ ContactForm
 
 ## 💡 工夫したポイント
 
-Nuxt 3 + TypeScript による型安全な構成
-
-コンポーネントの設計（責務の分離）
-
-Works ページのプレビュー同期
-
-ExperienceModal の外クリック閉じ処理
-
-Chart.js による SKILLS レーダーチャート
-
-ContactForm のカスタムバリデーション（novalidate）
-
-Cypress による全ページの UI・遷移テスト
-
-nodemailer の完全モックによる API テスト
+本プロジェクトでは、Nuxt 3 + TypeScript を用いて
+コンポーネント設計、UI 実装、API 構築、テスト自動化まで
+フロント〜バックエンド〜CI の全工程を通して構築しています。
 
 ---
 
@@ -237,6 +227,15 @@ GitHub Actions によるテスト自動化
 
 ---
 
+## 🌐 Deployment
+
+本プロジェクトは **Vercel** にデプロイしています。
+
+- Production URL: https://your-project.vercel.app  
+- CI: GitHub Actions + Cypress + Vitest
+
+---
+
 ## 📄 License
 
-This project is for personal portfolio use.
+This project is for personal portfolio use and not intended for commercial distribution.
