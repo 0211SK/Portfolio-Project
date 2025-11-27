@@ -213,25 +213,11 @@ ContactForm
 
 ---
 
-## 🚀 Future Improvements（今後の改善案）
-
-メタタグ / OGP / SEO 対応
-
-Lighthouse の最適化
-
-ダークモード（テーマ切替）
-
-microCMS / Contentful などによる制作物データ管理
-
-GitHub Actions によるテスト自動化
-
----
-
 ## 🌐 Deployment
 
 本プロジェクトは **Vercel** にデプロイしています。
 
-- Production URL: https://your-project.vercel.app  
+- Production URL: https://portfolio-project-ruby-five.vercel.app/
 - CI: GitHub Actions + Cypress + Vitest
 
 ---
