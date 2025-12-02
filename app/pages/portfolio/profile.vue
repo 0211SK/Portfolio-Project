@@ -26,11 +26,6 @@ import ProfileRight from '~/components/profile/ProfileRight.vue'
 </script>
 
 <style scoped>
-.profile-page {
-  display: flex;
-  justify-content: center;
-}
-
 .profile-inner {
   width: 100%;
   max-width: 1500px;

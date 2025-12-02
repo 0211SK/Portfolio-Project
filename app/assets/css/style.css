@@ -313,3 +313,116 @@ body {
 .form-message-success {
     color: #1e88e5;
 }
+
+/* ============================
+   スマホ最適化（〜768px）
+   ============================ */
+@media (max-width: 768px) {
+
+    /* ヘッダー */
+    .header {
+        height: 52px;
+        padding: 0 12px;
+    }
+
+    .header-inner {
+        padding: 8px 12px;
+    }
+
+    .nav {
+        gap: 8px;
+    }
+
+    .nav-item {
+        font-size: 14px;
+    }
+
+    /* Hero セクション */
+    .hero-container {
+        height: 420px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 0 8px;
+    }
+
+    /* ボタン位置調整 */
+    .button-position {
+        position: static;
+        margin-top: 24px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .button-position button {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    /* ページ共通 */
+    .page h1 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .page p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        margin: 16px;
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    /* Skills Chart や画像類は100%幅に */
+    .hero-image img,
+    .work-preview-image {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* ============================
+   超小型（〜480px）
+   ============================ */
+@media (max-width: 480px) {
+
+    .hero-container {
+        height: 360px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .nav-item {
+        font-size: 12px;
+    }
+
+    .button-position {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .button-position button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
