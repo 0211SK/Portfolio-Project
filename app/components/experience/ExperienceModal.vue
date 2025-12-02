@@ -179,4 +179,65 @@ const close = () => emit('close')
         opacity: 1;
     }
 }
+
+/* スマホ向け調整 */
+@media (max-width: 768px) {
+    .modal-overlay {
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+
+    .modal-content {
+        width: 95%;
+        max-width: 95%;
+        padding: 18px;
+        border-radius: 10px;
+        max-height: 85vh;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-right: 32px;
+    }
+
+    .detail {
+        font-size: 14px;
+    }
+
+    .timeline-title {
+        font-size: 16px;
+    }
+
+    /* タイムラインを縦並びにして読みやすく */
+    .timeline-body {
+        border-left: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .timeline-row {
+        flex-direction: column;
+        gap: 4px;
+        padding-left: 4px;
+        border-left: 2px solid #e0e0e0;
+        margin-left: 4px;
+    }
+
+    .timeline-period {
+        min-width: auto;
+        align-items: center;
+    }
+
+    .timeline-dot {
+        margin-top: 0;
+    }
+
+    .timeline-period-text {
+        font-size: 14px;
+    }
+
+    .timeline-tasks li {
+        font-size: 13px;
+    }
+}
 </style>
