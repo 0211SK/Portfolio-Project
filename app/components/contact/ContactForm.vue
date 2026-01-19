@@ -23,9 +23,11 @@
             送信が完了しました。ありがとうございます。
         </p>
 
-        <button type="submit" class="form-submit-button" :disabled="submitting">
-            {{ submitting ? '送信中…' : '送信する' }}
-        </button>
+        <div class="form-submit-wrapper">
+            <button type="submit" class="form-submit-button" :disabled="submitting">
+                {{ submitting ? '送信中…' : '送信する' }}
+            </button>
+        </div>
     </form>
 </template>
 
