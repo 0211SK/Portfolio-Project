@@ -1,5 +1,6 @@
 <template>
   <section class="page profile-page">
+    <h1>Profile</h1>
     <div class="profile-inner">
       <div class="profile-grid">
         <!-- 左：写真＋基本情報 -->
